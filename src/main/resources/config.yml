@@ -1,0 +1,49 @@
+# Storage method: MySQL or Yaml
+storage: yaml
+
+sql:
+  host:
+  port:
+  database:
+  username:
+  password:
+
+inventory:
+  title: "&cClaim Rewards"
+  rows: 6
+  confirm:
+    title: "&cConfirm"
+    rows: 3
+
+# Reward name should not contain pipe characters ('|') or commas (',')
+rewards:
+  example:
+    item:
+      type: "PAPER"
+      data: 0
+      name: "&e&lExample Reward"
+      lore:
+        - "&fClick me to claim the"
+        - "&cExample Reward"
+    commands:
+      - "give %player% diamond_block 64"
+
+messages:
+  claim_reward: "&aYou claimed the reward %name%"
+  player_only: "&cOnly players can use the claim command"
+  player_offline: "&cThe target player is not online!"
+  command_usage: "&cInvalid usage! Usage: %usage%"
+  no_permission: "&cYou do not have the required permissions to perform this action!"
+  no_rewards: "&cYou don't have any rewards to claim!"
+  invalid_command: "&cInvalid usage! Type /claimrewards for help!"
+  invalid_reward: "&cNo reward exists with id %id%"
+  invalid_number: "&c%number% is not a valid number"
+  reward_minimum: "&cYou must give a minimum amount of 1 reward"
+  give: "&aYou gave %player% %amount% of reward %reward%"
+  give_all: "&aYou gave all players %amount% of reward %reward%"
+  reloaded_config: "&aSuccessfully reloaded the plugin"
+  reward_list: "&aThe current reward IDs are: %ids%"
+  received_reward: "&aYou received %amount% of reward %reward% from %player%"
+  help: "/claimrewards\n/claimrewards list\n/claimrewards reload\n/claimrewards give <player> <reward> <amount>\n/claimrewards giveall <reward> <amount>\n/claim"
+
+

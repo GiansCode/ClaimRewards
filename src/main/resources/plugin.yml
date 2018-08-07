@@ -1,0 +1,12 @@
+name: ClaimRewards
+author: Mas281
+version: ${project.version}
+
+main: me.itsmas.claimrewards.ClaimRewards
+
+commands:
+  claim:
+    description: Claim a reward
+  claimrewards:
+    description: ClaimRewards main command
+    aliases: [cr]
