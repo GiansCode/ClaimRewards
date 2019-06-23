@@ -25,8 +25,8 @@ rewards:
       lore:
         - "&fClick me to claim the"
         - "&cExample Reward"
-    commands:
-      - "give %player% diamond_block 64"
+    actions:
+      - "[CONSOLECOMMAND] give %player% diamond_block 64"
 
 messages:
   claim_reward: "&aYou claimed the reward %name%"

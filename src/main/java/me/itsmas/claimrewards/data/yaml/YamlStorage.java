@@ -85,7 +85,6 @@ public class YamlStorage implements DataStorage
     public void saveData(Player player)
     {
         String serialized = plugin.getRewardManager().getRewardData(player).serialize();
-
         data.set(getPath(player), serialized);
     }
     

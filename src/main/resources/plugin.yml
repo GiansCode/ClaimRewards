@@ -2,7 +2,9 @@ name: ClaimRewards
 author: Mas281
 version: ${project.version}
 
+depend: [ActionUtil]
 main: me.itsmas.claimrewards.ClaimRewards
+api-version: 1.14
 
 commands:
   claim:

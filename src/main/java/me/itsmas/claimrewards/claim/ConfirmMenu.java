@@ -17,18 +17,20 @@ class ConfirmMenu
             UtilItem.createStack(Material.REDSTONE_BLOCK, 1, (short) 0, Util.colour("&c&lCancel"), null);
 
     private final Inventory inventory;
+    private final String title;
 
     ConfirmMenu(String title, int size)
     {
         this.inventory = Bukkit.createInventory(null, size, title);
+        this.title = title;
 
         inventory.setItem(11, CONFIRM_BUTTON);
         inventory.setItem(15, CANCEL_BUTTON);
     }
 
-    public String getTitle()
+    String getTitle()
     {
-        return inventory.getTitle();
+        return title;
     }
 
     void open(Player player)

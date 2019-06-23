@@ -64,7 +64,7 @@ public class RewardManager implements Listener
         return null;
     }
 
-    public Reward getReward(String id)
+    Reward getReward(String id)
     {
         for (Reward reward : baseRewards)
         {
@@ -98,7 +98,6 @@ public class RewardManager implements Listener
     public void giveReward(CommandSender sender, Player target, String reward, int amount)
     {
         sender.sendMessage(Message.GIVE.value().replace("%player%", target.getName()).replace("%amount%", String.valueOf(amount)).replace("%reward%", reward));
-
         sendReceivedMessage(sender, target, reward, amount);
 
         getRewardData(target).addReward(reward, amount);
@@ -185,8 +184,8 @@ public class RewardManager implements Listener
         List<String> colouredLore = new ArrayList<>();
         lore.forEach(line -> colouredLore.add(Util.colour(line)));
 
-        List<String> commands = config.getStringList(rewardPath + "commands");
+        List<String> actions = config.getStringList(rewardPath + "actions");
 
-        return new Reward(name, material, data, itemName, colouredLore, commands);
+        return new Reward(name, material, data, itemName, colouredLore, actions);
     }
 }

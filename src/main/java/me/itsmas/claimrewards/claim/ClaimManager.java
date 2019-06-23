@@ -59,27 +59,24 @@ public class ClaimManager implements Listener
         }
 
         Player player = (Player) event.getWhoClicked();
-        Inventory inventory = event.getInventory();
 
-        if (inventory.getTitle().equals(GUI_NAME))
+        if (player.getOpenInventory().getTitle().equals(GUI_NAME))
         {
             event.setCancelled(true);
 
-            if (clicked.hasItemMeta() && clicked.getItemMeta().hasDisplayName())
+            if (clicked.getItemMeta() != null && clicked.getItemMeta().hasDisplayName())
             {
                 String itemName = clicked.getItemMeta().getDisplayName();
-
                 Reward reward = plugin.getRewardManager().getRewardByName(itemName);
 
                 if (reward != null)
                 {
                     confirmations.put(player.getUniqueId(), reward);
-
                     confirmMenu.open(player);
                 }
             }
         }
-        else if (inventory.getTitle().equals(confirmMenu.getTitle()))
+        else if (player.getOpenInventory().getTitle().equals(confirmMenu.getTitle()))
         {
             event.setCancelled(true);
 
